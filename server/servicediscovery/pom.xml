@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.miniinsta</groupId>
-	<artifactId>service-discovery</artifactId>
+	<artifactId>servicediscovery</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>service-discovery</name>
+	<name>servicediscovery</name>
 	<description>Service discovery app</description>
 
 	<properties>
