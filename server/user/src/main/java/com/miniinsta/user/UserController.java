@@ -1,12 +1,21 @@
 package com.miniinsta.user;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.miniinsta.user.Model.CreateUserRequestModel;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @RestController
+@RequestMapping("/api/users")
 public class UserController {
-    @GetMapping("/users")
-    public String getUser() {
-        return "<h1>Getting User</h1>";
+
+    @GetMapping("check")
+    public String getHealthCheck() {
+        return "User API Services are UP";
+    }
+
+    @PostMapping("/createUser")
+    public String createUser (@Valid @RequestBody CreateUserRequestModel user) {
+        return "user";
     }
 }
