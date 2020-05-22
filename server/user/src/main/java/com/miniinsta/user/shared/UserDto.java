@@ -1,18 +1,17 @@
-package com.miniinsta.user.Model;
+package com.miniinsta.user.shared;
 
-
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Email;
-public class CreateUserRequestModel {
-    @NotNull(message = "First Name can't be empty")
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+
+public class UserDto implements Serializable {
+    private static final long serialVersionUID = 1605804752843360313L;
     private String firstName;
-    @NotNull(message = "Last Name can't be empty")
     private String lastName;
-    @NotNull(message = "Email can't be empty")
-    @Email(message = "Please enter valid email")
     private String email;
-    @NotNull(message = "Password can't be empty")
     private String password;
+    private String userId;
+    private String encryptedPassword;
 
     public String getFirstName() {
         return firstName;
@@ -44,5 +43,21 @@ public class CreateUserRequestModel {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getEncryptedPassword() {
+        return encryptedPassword;
+    }
+
+    public void setEncryptedPassword(String encryptedPassword) {
+        this.encryptedPassword = encryptedPassword;
     }
 }
